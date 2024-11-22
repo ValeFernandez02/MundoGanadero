@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Ganadera CRUD</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Gestión Ganadera</h1>
+        <nav>
+            <ul>
+                <li><a href="#form-section">Agregar Animal</a></li>
+                <li><a href="#animal-list">Lista de Animales</a></li>
+                <li><a href="#chart-section">Estadísticas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="form-section">
+            <h2>Agregar/Actualizar Animal</h2>
+            <form id="animal-form">
+                <input type="number" id="animal-id" placeholder="ID del animal" required>
+                <input type="text" id="animal-raza" placeholder="Raza del animal" required>
+                <input type="text" id="animal-salud" placeholder="Estado de salud" required>
+                <select id="animal-sexo" required>
+                    <option value="">Seleccionar sexo</option>
+                    <option value="Macho">Macho</option>
+                    <option value="Hembra">Hembra</option>
+                </select>
+                <input type="number" id="animal-edad" placeholder="Edad (años)" required min="0">
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+
+        <section id="animal-list">
+            <h2>Lista de Animales</h2>
+            <ul id="animals"></ul>
+        </section>
+
+        <section id="chart-section">
+            <h2>Estadísticas</h2>
+            <div>
+                <h3>Distribución por Sexo</h3>
+                <canvas id="sexDistributionChart" width="120" height="100"></canvas>
+            </div>
+            <div>
+                <h3>Distribución por Edad</h3>
+                <canvas id="ageDistributionChart" width="120" height="100"></canvas>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; Electiva profesional.</p>
+    </footer>
+
+    <!-- Librería Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
